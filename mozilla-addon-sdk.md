@@ -5,13 +5,13 @@ Versions 3.x of Python are not supported on any platform.
   
 If you have installed Python 3.X , when running the command:  
 ``` source bin/activate ```  
-you get an error regaring your version of Python.  
+you get an error regarding your version of Python.  
   
 #### Solution  
   
-You need to modify the activate script and the cfx script and add the following line at the begining:  
+You need to modify the activate script and the cfx script and add the following line at the begining (they both are located at 'addon-sdk/bin/' ):  
 ```#!/usr/bin/env python2.7 ```  
-and also at the end of the activate script, replace `python` for `python2.7` in the line that says:  
+and also at the end of the activate script, you need to replace `python` for `python2.7` in the line that says:  
 ``` python -c "from jetpack_sdk_env import welcome; welcome()" ```  
 that means the last line of the activate script should look like this:  
 ``` python2.7 -c "from jetpack_sdk_env import welcome; welcome()" ```  
